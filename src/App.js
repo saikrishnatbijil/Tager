@@ -9,7 +9,7 @@ function App() {
   const [message, setMessage] = useState('')
   const [tag, setTag] = useState('Hit GO! to see the magic')
   const configuration = new Configuration({
-    apiKey: "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"
+    apiKey: "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"
   });
   const openai = new OpenAIApi(configuration);
 
