@@ -2,26 +2,29 @@ import logo from './logo.svg';
 import './App.css';
 import { Navbar } from './container'
 import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 
 function App() {
   const OpenAI = require('openai');
-  const { Configuration, OpenAIApi} = OpenAI;
+  const { Configuration, OpenAIApi } = OpenAI;
   const [message, setMessage] = useState('')
   const [tag, setTag] = useState('Hit GO! to see the magic')
-  const configuration = new Configuration({
-    apiKey: "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"
-  });
-  const openai = new OpenAIApi(configuration);
+
 
   async function makeTag() {
-    const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: 'Write a Tagline for a '+message,
-      max_tokens: 20,
-      temperature: 0,
-    });
-    console.warn(response.data.choices[0].text)
-    setTag(response.data.choices[0].text)
+    axios.get('http://localhost:8000/respond', {
+      params: {
+        product: message
+      }
+    })
+    .then(function (response) {
+      console.log(response.data);
+      setTag(response.data)
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
 
   function getData(val) {
