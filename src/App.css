@@ -1,38 +1,107 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: linear-gradient(var(--color-bg), white);
 }
 
-.App-link {
-  color: #61dafb;
+
+.container {
+  width: 100%;
+  padding-top: 14%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.formDiv {
+  width: 40%;
+  height: 70px;
+}
+
+.textInput {
+  width: 75%;
+  height: 100%;
+  background-color: var(--color-text);
+  border: none;
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: 800;
+  border-radius: 20px;
+  color: var(--color-dark-bg);
+}
+
+.send {
+  width: 15%;
+  height: 100%;
+  margin: 10px;
+  border: none;
+  background-color: var(--color-main);
+  border-radius: 20px;
+  font-size: 15px;
+  transition-duration: 0.5s;
+}
+
+.send:hover {
+  opacity: 0.6;
+  scale: 1.2;
+}
+
+.container p {
+  padding-top: 10px;
+  color: var(--color-bg);
+  cursor: pointer;
+}
+
+.container p:hover {
+  text-decoration: underline;
+}
+
+.container h1 {
+  color: var(--color-dark-main);
+  font-size: 45px;
+  padding-top: 5%;
+}
+
+@media screen and (max-width: 600px) {
+  .formDiv {
+    width: 100%;
+    height: 8vh;
+    margin-top: 20%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .textInput {
+    width: 60%;
+  }
+
+  .send {
+    width: 20% !important;
+  }
+
+  .container p {
+    margin-top: 25%;
+  }
+
+  .container h1 {
+    font-size: 30px !important;
+  }
+}
+
+@media screen and (max-width: 999px) and (min-width: 600px) {
+  .formDiv {
+    width: 80%;
+    height: 8vh;
+  }
+
+  .textInput {
+    width: 60%;
+  }
+
+  .send {
+    width: 20% !important;
+  }
+
+  .container p {
+    margin-top: 12%;
+  }
+
+  .container h1 {
+    font-size: 40px !important;
   }
 }
