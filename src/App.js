@@ -13,7 +13,7 @@ function App() {
 
 
   async function makeTag() {
-    axios.get('http://localhost:8000/respond', {
+    axios.get('https://taser-backend-api.cyclic.app/respond', {
       params: {
         product: message
       }
