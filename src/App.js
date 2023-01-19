@@ -6,14 +6,13 @@ import axios from 'axios';
 
 
 function App() {
-  const OpenAI = require('openai');
-  const { Configuration, OpenAIApi } = OpenAI;
   const [message, setMessage] = useState('')
   const [tag, setTag] = useState('Hit GO! to see the magic')
 
 
   async function makeTag() {
-    axios.get('https://taser-backend-api.cyclic.app/respond', {
+    setTag('Loading...')
+    axios.get('https://clumsy-ruby-snaps.cyclic.app/respond', {
       params: {
         product: message
       }
